@@ -1,0 +1,37 @@
+import random
+import os
+os.system('cls')
+upperCase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+lowerCase = upperCase.lower()
+digits = '1234567890'
+symbols = '!@#$%^&*_:;'
+upper,lower,nums,syms = True ,True,True,True
+all = ''
+print("write y for yes and n for no!!!")
+u = input("do you want to include upperCase letter")
+if u == 'n' or u == 'N':
+    upper = False
+else:
+    all += upperCase
+
+u = input("do you want to include lowerCase letter")
+if u == 'n' or u == 'N':
+    lower = False
+else:
+    all += lowerCase
+
+u = input("do you want to include digits")
+if u == 'n' or u == 'N':
+    nums = False
+else:
+    all += digits
+
+u = input("do you want to include symbols")
+if u == 'n' or u == 'N':
+    syms = False
+else:
+    all += symbols
+
+length = int(input('enter the password length'))
+password  = "".join(random.sample(all,length))
+print(password)
